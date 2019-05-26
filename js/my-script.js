@@ -2,7 +2,9 @@
 	'use strict'
 
 	window.addEventListener('load', function(){
-        //to ask: truck die niet meer van truckleft veranderd, hoe op gsm gebruiken, array van trucks
+        document.getElementById('carStartRight').style.left = 7 + 'vw';
+        document.getElementById('carStartLeft').style.left = 65 + 'vw';
+
         let collisionCheck = false;
         let pauseCheck = false;
         let goButton = document.getElementById('go');
@@ -153,8 +155,9 @@
             if (truckLeft1 + truckWidth <= autoLeft){return false;}
             
             collisionCheck = true;
-            document.getElementById("endscore").innerHTML = "jouw score: " + score;
+            document.getElementById("endscore").innerHTML = "Jouw score: " + score;
             document.getElementById("eindscherm").style.visibility = "visible";
+            pauseButton.style.visibility = "hidden";
             console.log("botsing");
             } 
         }
@@ -170,6 +173,7 @@
             collisionCheck = true;
             document.getElementById("endscore").innerHTML = "jouw score: " + score;
             document.getElementById("eindscherm").style.visibility = "visible";
+            pauseButton.style.visibility = "hidden";
             console.log("botsing");
             }
         }
@@ -185,6 +189,7 @@
             collisionCheck = true;
             document.getElementById("endscore").innerHTML = "jouw score: " + score;
             document.getElementById("eindscherm").style.visibility = "visible";
+            pauseButton.style.visibility = "hidden";
             console.log("botsing");
             } 
         }
@@ -215,6 +220,7 @@
             collisionCheck = true;
             document.getElementById("endscore").innerHTML = "jouw score: " + score;
             document.getElementById("eindscherm").style.visibility = "visible";
+            pauseButton.style.visibility = "hidden";
             console.log("botsing");
             }
         }
@@ -230,6 +236,7 @@
             collisionCheck = true;
             document.getElementById("endscore").innerHTML = "jouw score: " + score;
             document.getElementById("eindscherm").style.visibility = "visible";
+            pauseButton.style.visibility = "hidden";
             console.log("botsing");
             }
         }
@@ -252,10 +259,11 @@
         });
 
         function loop() {
-            if (pauseButton.clicked == true)
+            if (collisionCheck == true)
             {
             return;
             }
+            
             requestAnimationFrame(loop);
             truckBottom1 = truckTop1 + truckHeigth;
             truckBottom2 = truckTop2 + truckHeigth;
@@ -310,8 +318,9 @@
 
      
         goButton.addEventListener('click', function(){
-            startschermStyle.left = -(window.innerWidth) + 'px';
-
+            startschermStyle.visibility = "hidden";
+            document.getElementById("carStartRight").style.transition = 0 + 's';
+            document.getElementById("carStartLeft").style.transition = 0 + 's';
             pauseButton.style.visibility = "visible";
             scorebord.style.visibility = "visible";
 
@@ -324,6 +333,9 @@
                 pauseCheck = true;
             }   else pauseCheck = false;
             
+        });
+        document.getElementById("restart").addEventListener('click', function(){
+            location.reload();            
         });
         
         function truckGoUp() {
