@@ -9,7 +9,10 @@
         let pauseCheck = false;
         let goButton = document.getElementById('go');
         let pauseButton = document.getElementById('pause');
+       
         
+        var carDriving = new Audio("js/carDriving.wav");
+        var crashSound = new Audio("js/crash.wav");
 
         //auto
         let autoStyle = document.getElementById("auto").style;
@@ -152,6 +155,7 @@
                     // test left
                     if (truckLeft[i] + truckWidth <= autoLeft){continue;}
                     
+                    crashSound.play();
                     collisionCheck = true;
                     document.getElementById("endscore").innerHTML = "Jouw score: " + score;
                     document.getElementById("eindscherm").style.visibility = "visible";
@@ -164,7 +168,7 @@
                     } else document.getElementById("endhighscore").innerHTML = "Highscore: " + highscore;
                     
                     localStorage.setItem("highscore", highscore);
-                   
+                    carDriving.pause();
                     
                 } 
             }
@@ -239,7 +243,7 @@
             pauseButton.style.visibility = "visible";
             scorebord.style.visibility = "visible";
             highscorebord.style.visibility = "visible";
-
+            carDriving.play();
             loop();    
             
         });
@@ -268,7 +272,8 @@
                     truckStyle[i].left = truckLeft[i] + 'px';
                     score++; 
                     scoreSpan.innerText = score;
-    
+                    
+                    
                 }
             }
             
