@@ -9,7 +9,7 @@
         let pauseCheck = false;
         let goButton = document.getElementById('go');
         let pauseButton = document.getElementById('pause');
-        let score = 0;
+        
 
         //auto
         let autoStyle = document.getElementById("auto").style;
@@ -20,89 +20,86 @@
         let autoTop;
         let autoLeft =  Math.floor(window.innerWidth / 2 - 20);
         
-        //truck
-        let truckTop1 = 30;
+        //bijhouden positie elke truck
         let truckBottom1;
-        let truckWidth = 43;
-        let truckLeft1 = Math.floor(Math.random() * window.innerWidth);
-        if (truckLeft1 > window.innerWidth - truckWidth ){
-            truckLeft1 = window.innerWidth - truckWidth;
-        }
-        
-
-        
-        let truckHeigth = 97;
-
-        let truckStyle1 = document.getElementById("truck1").style;
-        
-        truckStyle1.left = truckLeft1 + 'px';
-
-
-        //truck2
-        let truckTop2 = -120;
         let truckBottom2;
-        let truckLeft2 = Math.floor(Math.random() * window.innerWidth);
-        if (truckLeft2 > window.innerWidth - truckWidth ){
-            truckLeft2 = window.innerWidth - truckWidth;
-        }
-        let truckStyle2 = document.getElementById("truck2").style;
-        
-        truckStyle2.left = truckLeft2 + 'px';
-
-        //truck3
-        let truckTop3 = -900;
         let truckBottom3;
-        let truckLeft3 = Math.floor(Math.random() * window.innerWidth);
-        if (truckLeft2 > window.innerWidth - truckWidth ){
-            truckLeft2 = window.innerWidth - truckWidth;
-        }
-        let truckStyle3 = document.getElementById("truck3").style;
-        
-        truckStyle3.left = truckLeft3 + 'px';
-
-        //truck4
-        let truckTop4 = -780;
         let truckBottom4;
-        let truckLeft4 = Math.floor(Math.random() * window.innerWidth);
-        if (truckLeft4 > window.innerWidth - truckWidth ){
-            truckLeft4 = window.innerWidth - truckWidth;
-        }
-        let truckStyle4 = document.getElementById("truck4").style;
-        
-        truckStyle4.left = truckLeft4 + 'px';
-
-        //truck5
-        let truckTop5 = -400;
         let truckBottom5;
-        let truckLeft5 = Math.floor(Math.random() * window.innerWidth);
-        if (truckLeft5 > window.innerWidth - truckWidth ){
-            truckLeft5 = window.innerWidth - truckWidth;
-        }
-        let truckStyle5 = document.getElementById("truck5").style;
-        
-        truckStyle5.left = truckLeft5 + 'px';
-
-        //truck6
-        let truckTop6 = -450;
         let truckBottom6;
-        let truckLeft6 = Math.floor(Math.random() * window.innerWidth);
-        if (truckLeft6 > window.innerWidth - truckWidth ){
-            truckLeft6 = window.innerWidth - truckWidth;
-        }
-        let truckStyle6 = document.getElementById("truck6").style;
-        
-        truckStyle6.left = truckLeft6 + 'px';
 
+        let truckTop1;
+        let truckTop2;
+        let truckTop3;
+        let truckTop4;
+        let truckTop5;
+        let truckTop6;
+
+        let truckLeft1;
+        let truckLeft2;
+        let truckLeft3;
+        let truckLeft4;
+        let truckLeft5;
+        let truckLeft6;
+
+        let truckStyle1;
+        let truckStyle2;
+        let truckStyle3;
+        let truckStyle4;
+        let truckStyle5;
+        let truckStyle6;
+
+        
+
+
+    
+        //Alle trucks positionering
+        let truckTop = [truckTop1,truckTop2,truckTop3,truckTop4,truckTop5,truckTop6];
+        let truckBottom = [truckBottom1,truckBottom2,truckBottom3,truckBottom4,truckBottom5,truckBottom6];
+        let truckStyle = [truckStyle1,truckStyle2,truckStyle3,truckStyle4,truckStyle5,truckStyle6];
+        let truckLeft = [truckLeft1,truckLeft2,truckLeft3,truckLeft4,truckLeft5,truckLeft6];
+        let truckNaam = ["truck1","truck2","truck3","truck4","truck5","truck6"];
+        let truckSnelheid = [1,2,3,1,2,3];
+        let truckHoogte = [30,-150,-690,-780,-930,-1100];
+        let truckHeigth = 97;
+        let truckWidth = 43;
+
+        for (let i = 0; i < truckTop.length; i++) {
+            truckTop[i] = truckHoogte[i];
+            
+            
+            truckLeft[i] = Math.floor(Math.random() * window.innerWidth);
+            if (truckLeft[i] > window.innerWidth - truckWidth ){
+                truckLeft[i] = window.innerWidth - truckWidth;
+            }                 
+
+            truckStyle[i] = document.getElementById(truckNaam[i]).style;
+            
+            truckStyle[i].left = truckLeft[i] + 'px';
+
+        }
+        
+        
+        
         //startscherm
         let startschermStyle = document.getElementById("startscherm").style;  
 
         //scorebord
         let scorebord = document.getElementById("scorebord");
         let scoreSpan = document.getElementById("score");
+        let highscorebord = document.getElementById("highscorebord");
+        let highscoreSpan = document.getElementById("highscore");
         let gammaset = false;
         let gamma;
-
-        let uitvoerenLoop = 1;   
+        let score = 0;
+        scoreSpan.innerText = score;
+        let highscore;
+        if (localStorage.getItem("highscore") == null){
+            highscore = 0;
+        }else highscore = localStorage.getItem("highscore");
+        
+        highscoreSpan.innerText = highscore;
+      
           
         
 
@@ -144,102 +141,36 @@
             }
         };
 
-        
-        function collision1() {
-            if (window.innerHeight - truckTop1 > 10){
-            // test hoogte
-            if (truckBottom1 <= window.innerHeight - autoTop){return false;}
-            // test right
-            if (truckLeft1 >= autoLeft + autoWidth){return false;}
-            // test left
-            if (truckLeft1 + truckWidth <= autoLeft){return false;}
-            
-            collisionCheck = true;
-            document.getElementById("endscore").innerHTML = "Jouw score: " + score;
-            document.getElementById("eindscherm").style.visibility = "visible";
-            pauseButton.style.visibility = "hidden";
-            console.log("botsing");
-            } 
-        }
-        function collision2() {
-            if (window.innerHeight - truckTop2 > 10){
-            // test hoogte
-            if (truckBottom2 <= window.innerHeight - autoTop){return false;}
-            // test right
-            if (truckLeft2 >= autoLeft + autoWidth){return false;}
-            // test left
-            if (truckLeft2 + truckWidth <= autoLeft){return false;}
-            
-            collisionCheck = true;
-            document.getElementById("endscore").innerHTML = "jouw score: " + score;
-            document.getElementById("eindscherm").style.visibility = "visible";
-            pauseButton.style.visibility = "hidden";
-            console.log("botsing");
+        //checkt de botsing tussen auto's en trucks, behandelt het einde van de game
+        function collision() {
+            for (let i = 0; i < truckTop.length; i++) {
+                if (window.innerHeight - truckTop[i] > 10){
+                    // test hoogte
+                    if (truckBottom[i] <= window.innerHeight - autoTop){continue;}
+                    // test right
+                    if (truckLeft[i] >= autoLeft + autoWidth){continue;}
+                    // test left
+                    if (truckLeft[i] + truckWidth <= autoLeft){continue;}
+                    
+                    collisionCheck = true;
+                    document.getElementById("endscore").innerHTML = "Jouw score: " + score;
+                    document.getElementById("eindscherm").style.visibility = "visible";
+                    pauseButton.style.visibility = "hidden";
+                    console.log("botsing");
+
+                    if (localStorage.getItem("highscore") < score || localStorage.getItem("highscore") == null){
+                        highscore = score;
+                        document.getElementById("endhighscore").innerHTML = "New highscore: " + highscore;
+                    } else document.getElementById("endhighscore").innerHTML = "Highscore: " + highscore;
+                    
+                    localStorage.setItem("highscore", highscore);
+                   
+                    
+                } 
             }
-        }
-        function collision3() {
-            if (window.innerHeight - truckTop3 > 10){
-            // test hoogte
-            if (truckBottom3 <= window.innerHeight - autoTop){return false;}
-            // test right
-            if (truckLeft3 >= autoLeft + autoWidth){return false;}
-            // test left
-            if (truckLeft3 + truckWidth <= autoLeft){return false;}
             
-            collisionCheck = true;
-            document.getElementById("endscore").innerHTML = "jouw score: " + score;
-            document.getElementById("eindscherm").style.visibility = "visible";
-            pauseButton.style.visibility = "hidden";
-            console.log("botsing");
-            } 
         }
-        function collision4() {
-            if (window.innerHeight - truckTop4 > 10){
-            // test hoogte
-            if (truckBottom4 <= window.innerHeight - autoTop){return false;}
-            // test right
-            if (truckLeft4 >= autoLeft + autoWidth){return false;}
-            // test left
-            if (truckLeft4 + truckWidth <= autoLeft){return false;}
-            
-            collisionCheck = true;
-            document.getElementById("endscore").innerHTML = "jouw score: " + score;
-            document.getElementById("eindscherm").style.visibility = "visible";
-            console.log("botsing");
-            }
-        }
-        function collision5() {
-            if (window.innerHeight - truckTop5 > 10){
-            // test hoogte
-            if (truckBottom5 <= window.innerHeight - autoTop){return false;}
-            // test right
-            if (truckLeft5 >= autoLeft + autoWidth){return false;}
-            // test left
-            if (truckLeft5 + truckWidth <= autoLeft){return false;}
-            
-            collisionCheck = true;
-            document.getElementById("endscore").innerHTML = "jouw score: " + score;
-            document.getElementById("eindscherm").style.visibility = "visible";
-            pauseButton.style.visibility = "hidden";
-            console.log("botsing");
-            }
-        }
-        function collision6() {
-            if (window.innerHeight - truckTop6 > 10){
-            // test hoogte
-            if (truckBottom6 <= window.innerHeight - autoTop){return false;}
-            // test right
-            if (truckLeft6 >= autoLeft + autoWidth){return false;}
-            // test left
-            if (truckLeft6 + truckWidth <= autoLeft){return false;}
-            
-            collisionCheck = true;
-            document.getElementById("endscore").innerHTML = "jouw score: " + score;
-            document.getElementById("eindscherm").style.visibility = "visible";
-            pauseButton.style.visibility = "hidden";
-            console.log("botsing");
-            }
-        }
+        //zorgt voor de beweging met de auto, 26 en -26 zijn de maximale gamma waarden zodat de gebruiker zijn of haar device niet te schuin hoeft te houden
         window.addEventListener('deviceorientation', function(e) {
             gammaset = true;
             if (e.gamma < -26){
@@ -258,6 +189,7 @@
             
         });
 
+        //deze loop wordt uitgevoerd doorheen het spel
         function loop() {
             if (collisionCheck == true)
             {
@@ -265,192 +197,86 @@
             }
             
             requestAnimationFrame(loop);
-            truckBottom1 = truckTop1 + truckHeigth;
-            truckBottom2 = truckTop2 + truckHeigth;
-            truckBottom3 = truckTop3 + truckHeigth;
-            truckBottom4 = truckTop4 + truckHeigth;
-            truckBottom5 = truckTop5 + truckHeigth;
-            truckBottom6 = truckTop6 + truckHeigth;
-            autoTop = autoBottom + autoHeigth;
+            if (pauseCheck == true){
+                return;
+            }
+            for (let i = 0; i < truckTop.length; i++) {
+                truckBottom[i] = truckTop[i] + truckHeigth;
+            }
+           
+            autoTop = autoBottom + autoHeigth;           
             
             
-
-            //testzone
             if(gammaset){ 
             autoLeft = ((window.innerWidth/60)*(gamma +30))-(autoWidth/2)
-            }
+            }                
+                        
             
-            
-            
-            
-            // tot hier testzone
             if (collisionCheck == false || pauseCheck == true){  
-                truckTop1 = truckTop1 + Math.floor(score/2) + 3; 
-                truckTop2 = truckTop2 + Math.floor(score/2) + 2;   
-                truckTop3 = truckTop3 + Math.floor(score/2) + 1; 
-                truckTop4 = truckTop4 + Math.floor(score/2) + 1; 
-                truckTop5 = truckTop5 + Math.floor(score/2) + 2; 
-                truckTop6 = truckTop6 + Math.floor(score/2) + 3;              
-            }
-            
+                for (let i = 0; i < truckTop.length; i++) {
+                    truckTop[i] = truckTop[i] + Math.floor(score/5) + truckSnelheid[i] ;
+                }
+                            
+            }            
             
             autoStyle.left = autoLeft + 'px';
             autoStyle.bottom = autoBottom + 'px';
             
-            
-            truckStyle1.top = truckTop1 + 'px';
-            truckStyle2.top = truckTop2 + 'px';
-            truckStyle3.top = truckTop3 + 'px';
-            truckStyle4.top = truckTop4 + 'px';
-            truckStyle5.top = truckTop5 + 'px';
-            truckStyle6.top = truckTop6 + 'px';
-            collision1();
-            collision2();
-            collision3();
-            collision4();
-            collision5();
-            collision6();
-            truckGoUp();
-            scoreBerekenen();
-            
+            for (let i = 0; i < truckTop.length; i++) {
+                truckStyle[i].top = truckTop[i] + 'px';
+            }
+
+            collision();              
+            truckGoUp();      
             
         }
 
-     
+        //start knop
         goButton.addEventListener('click', function(){
             startschermStyle.visibility = "hidden";
             document.getElementById("carStartRight").style.transition = 0 + 's';
             document.getElementById("carStartLeft").style.transition = 0 + 's';
             pauseButton.style.visibility = "visible";
             scorebord.style.visibility = "visible";
+            highscorebord.style.visibility = "visible";
 
             loop();    
             
         });
-
+        //pauzeknop
         document.getElementById("pause").addEventListener('click', function(){
             if (pauseCheck == false){
                 pauseCheck = true;
             }   else pauseCheck = false;
             
         });
+
+        //restartknop
         document.getElementById("restart").addEventListener('click', function(){
             location.reload();            
         });
         
+        //brengt de truck van beneden terug naar boven en doet de score +1
         function truckGoUp() {
+            for (let i = 0; i < truckTop.length; i++) {
+                if(truckTop[i] > (truckHeigth + window.innerHeight)){
+                    truckTop[i] = -truckHeigth;
+                    truckLeft[i] = Math.floor(Math.random() * window.innerWidth);
+                    if (truckLeft[i] > window.innerWidth - truckWidth ){
+                        truckLeft[i] = window.innerWidth - truckWidth;
+                    }
+                    truckStyle[i].left = truckLeft[i] + 'px';
+                    score++; 
+                    scoreSpan.innerText = score;
+    
+                }
+            }
             
-            if(truckTop1 > (truckHeigth + window.innerHeight)){
-                truckTop1 = -truckHeigth;
-                truckLeft1 = Math.floor(Math.random() * window.innerWidth);
-                if (truckLeft1 > window.innerWidth - truckWidth ){
-                    truckLeft1 = window.innerWidth - truckWidth;
-                }
-                truckStyle1.left = truckLeft1 + 'px';
-                
-
-            }
-            if(truckTop2 > (truckHeigth + window.innerHeight)){
-                truckTop2 = -truckHeigth;
-                truckLeft2 = Math.floor(Math.random() * window.innerWidth);
-                if (truckLeft2 > window.innerWidth - truckWidth ){
-                    truckLeft2 = window.innerWidth - truckWidth;
-                }
-                truckStyle2.left = truckLeft2 + 'px';
-                 
-                
-
-            }
-            if(truckTop3 > (truckHeigth + window.innerHeight)){
-                truckTop3 = -truckHeigth;
-                truckLeft3 = Math.floor(Math.random() * window.innerWidth);
-                if (truckLeft3 > window.innerWidth - truckWidth ){
-                    truckLeft3 = window.innerWidth - truckWidth;
-                }
-                truckStyle3.left = truckLeft3 + 'px';
-                
-
-            }
-            if(truckTop4 > (truckHeigth + window.innerHeight)){
-                truckTop4 = -truckHeigth;
-                truckLeft4 = Math.floor(Math.random() * window.innerWidth);
-                if (truckLeft4 > window.innerWidth - truckWidth ){
-                    truckLeft4 = window.innerWidth - truckWidth;
-                }
-                truckStyle4.left = truckLeft4 + 'px';
-                
-
-            }
-            if(truckTop5 > (truckHeigth + window.innerHeight)){
-                truckTop5 = -truckHeigth;
-                truckLeft5 = Math.floor(Math.random() * window.innerWidth);
-                if (truckLeft5 > window.innerWidth - truckWidth ){
-                    truckLeft5 = window.innerWidth - truckWidth;
-                }
-                truckStyle5.left = truckLeft5 + 'px';
-                
-
-            }
-            if(truckTop6 > (truckHeigth + window.innerHeight)){
-                truckTop6 = -truckHeigth;
-                truckLeft6 = Math.floor(Math.random() * window.innerWidth);
-                if (truckLeft6 > window.innerWidth - truckWidth ){
-                    truckLeft6 = window.innerWidth - truckWidth;
-                }
-                truckStyle6.left = truckLeft6 + 'px';
-                
-                
-
-            }
+            
+            
         }
          
-        function scoreBerekenen() {
-            if((autoBottom - autoHeigth) == (truckBottom1 - window.innerHeight - truckHeigth)){
-                if(collisionCheck == false){
-                    score++; 
-                    scoreSpan.innerText = score;
-                }            
-                
-            }
-            if((autoBottom - autoHeigth) == (truckBottom2 - window.innerHeight - truckHeigth)){
-                if(collisionCheck == false){
-                    score++; 
-                    scoreSpan.innerText = score;
-                }            
-                
-            }
-            if((autoBottom - autoHeigth) == (truckBottom3 - window.innerHeight - truckHeigth)){
-                if(collisionCheck == false){
-                    score++; 
-                    scoreSpan.innerText = score;
-                }            
-                
-            }
-            if((autoBottom - autoHeigth) == (truckBottom4 - window.innerHeight - truckHeigth)){
-                if(collisionCheck == false){
-                    score++; 
-                    scoreSpan.innerText = score;
-                }            
-                
-            }
-            if((autoBottom - autoHeigth) == (truckBottom5 - window.innerHeight - truckHeigth)){
-                if(collisionCheck == false){
-                    score++; 
-                    scoreSpan.innerText = score;
-                }            
-                
-            }
-            if((autoBottom - autoHeigth) == (truckBottom6 - window.innerHeight - truckHeigth)){
-                if(collisionCheck == false){
-                    score++; 
-                    scoreSpan.innerText = score;
-                }            
-                
-            }
-
-        }
-
-
+        
 	});	
 
 })();

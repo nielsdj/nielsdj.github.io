@@ -5,31 +5,40 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/game.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="spel"><div >
-    <img src="img/car2.png" alt="auto" id="auto"></div>
-    <div><img src="img/truck.png" alt="gele truck" id="truck1"></div>
-    <div><img src="img/truck.png" alt="gele truck" id="truck2"></div>
-    <div><img src="img/truck.png" alt="gele truck" id="truck3"></div>
-    <div><img src="img/truck.png" alt="gele truck" id="truck4"></div>
-    <div><img src="img/truck.png" alt="gele truck" id="truck5"></div>
-    <div><img src="img/truck.png" alt="gele truck" id="truck6"></div>
+    <img src="css/img/car2.png" alt="auto" id="auto"></div>
+    <div><img src="css/img/truck.png" alt="gele truck" id="truck1"></div>
+    <div><img src="css/img/truck2.png" alt="blauwe truck" id="truck2"></div>
+    <div><img src="css/img/truck3.png" alt="groene truck" id="truck3"></div>
+    <div><img src="css/img/truck4.png" alt="oranje truck" id="truck4"></div>
+    <div><img src="css/img/truck5.png" alt="paarse truck" id="truck5"></div>
+    <div><img src="css/img/truck6.png" alt="rode truck" id="truck6"></div>
     
   </div>
 
   <div id="startscherm">
-    <img src="img/carStart.png" alt="car" id="carStartRight"> 
+    <img src="css/img/carStart.png" alt="car" id="carStartRight"> 
     <button id="go">start</button>  
     <p id="tekstbeginscherm">Ontwijk de trucks!</p>
-    <img src="img/carStartLeft.png" alt="car" id="carStartLeft">  
+    <img src="css/img/carStartLeft.png" alt="car" id="carStartLeft">  
   </div>  
   <button id="pause">Pause</button>
   <div id="scorebord"><span id="score"></span></div>
+  <div id="highscorebord">
+    <p>Highscore:</p>
+    <span id="highscore"></span>
+  </div>
   <div id="eindscherm">
     <div id="teksteindscherm">
-      <p id="endtitle">You DIED</p>
-      <span id="endscore"></span>      
+      <p id="endtitle">You died in a tragic accident!</p>
+      <div id=scores>
+        <span id="endscore"></span>           
+        <span id="endhighscore"></span> 
+      </div>
+               
     </div> 
     <button id="restart">Try Again</button>   
   </div>
