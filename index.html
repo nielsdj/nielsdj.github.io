@@ -1,48 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <title> Gamepage </title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/game.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+	<title> Home | KSA Opwijk </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"  href="css/styles.css">
+	<link rel="stylesheet"  href="css/start.css">
+	<link rel="stylesheet"  href="css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Palanquin:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
 </head>
 <body>
-  <div id="spel"><div >
-    <img src="css/img/car2.png" alt="auto" id="auto"></div>
-    <div><img src="css/img/truck.png" alt="gele truck" id="truck1"></div>
-    <div><img src="css/img/truck2.png" alt="blauwe truck" id="truck2"></div>
-    <div><img src="css/img/truck3.png" alt="groene truck" id="truck3"></div>
-    <div><img src="css/img/truck4.png" alt="oranje truck" id="truck4"></div>
-    <div><img src="css/img/truck5.png" alt="paarse truck" id="truck5"></div>
-    <div><img src="css/img/truck6.png" alt="rode truck" id="truck6"></div>
-    
-  </div>
+	<header>		
+		<div class="wrapper">
+			<h1 id="logo"><a href="index.html"></a></h1>
+			<nav >
+				<input type="checkbox" id="menu"/>
+				<label for="menu">Menu</label>
+				<div class="menu-content">				
+					<ul>
+						<li><a href="index.html" >Home</a></li>
+						<li><a href="about.html">Info</a></li>
+						<li><a href="activiteiten.html">Activiteiten</a></li>
+						<li><a href="kledij.html">Kledij</a></li>
+						<li><a href="leiders.html">Leiding</a></li>
+						<li><a href="Inschrijving.html">Inschrijving</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>			
+	</header>	
+	<main>
+		<div id="banner">
+			
+		</div>
+		<div class="wrapper">			
+			<section id="intro">				
+				<h3>KSA Opwijk, waar jongens mannen worden!</h3>				
+				<p></p>
+				<a href="about.html">Meer info</a>				
+			</section>
+			<section id="photos">
+				<div>
+					<img src="img/foto_homepage1.jpg" alt="foto jongknapen">
+					<img src="img/foto_homepage2.jpg" alt="foto leeuwkens">
+					<img src="img/foto_homepage3.jpg" alt="groot kampvuur">
+					<img src="img/foto_homepage4.jpg" alt="foto knapen">
+					<img src="img/vierkantdummy.png" alt="vier afbeeldingen">
+				</div>
+				<a href="activiteiten.html">Wat doen we deze zondag?</a>
+			</section>
+		</div>
 
-  <div id="startscherm">
-    <img src="css/img/carStart.png" alt="car" id="carStartRight"> 
-    <button id="go">start</button>  
-    <p id="tekstbeginscherm">Ontwijk de trucks!</p>
-    <img src="css/img/carStartLeft.png" alt="car" id="carStartLeft">  
-  </div>  
-  <button id="pause">Pause</button>
-  <div id="scorebord"><span id="score"></span></div>
-  <div id="highscorebord">
-    <p>Highscore:</p>
-    <span id="highscore"></span>
-  </div>
-  <div id="eindscherm">
-    <div id="teksteindscherm">
-      <p id="endtitle">You died in a tragic accident!</p>
-      <div id=scores>
-        <span id="endscore"></span>           
-        <span id="endhighscore"></span> 
-      </div>
-               
-    </div> 
-    <button id="restart">Try Again</button>   
-  </div>
-
-  <script src="js/my-script.js"></script>
+	</main>
+	<footer>
+		<div class="wrapper">
+			<ul id="socialmedia">
+				<li><a href="https://www.facebook.com/KsaOpwijk/" title="facebook"><i class="fab fa-facebook"></i></a></li>
+				<li><a href="mailto:info@ksaopwijk.be"><i class="far fa-envelope"></i></a></li>
+			</ul>			
+			<p>© 2019 N.Dejonghe</p>
+		</div>
+	</footer>
 </body>
 </html>

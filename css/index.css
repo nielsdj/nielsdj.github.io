@@ -1,0 +1,230 @@
+/**
+ * Index stylesheet
+ *
+ * @author      Niels Dejonghe (niels@zoni.be)
+ *
+ */
+
+/* =============================================
+ * LAYOUT
+ =============================================== */
+
+header .wrapper {
+    align-items: flex-start;
+}
+
+
+
+
+/* =============================================
+ * BANNER
+ =============================================== */
+#banner {
+    background-image: url(../img/omslagfoto2.jpg); 
+    background-size: cover;      
+    overflow: hidden;
+    background-position-x: center;
+    background-position-y: 20%;
+    margin-bottom: 7rem;
+    padding-bottom: 40rem;	
+    display: block;      
+    
+}
+.wrapper_banner{   
+    max-width: none;
+    margin: auto;
+}
+
+
+
+
+/* =============================================
+ * MAIN
+ =============================================== */
+#intro a {
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+#intro a:after{
+    content:" ➙";
+}
+
+#intro a:hover {
+    color:#298a10;
+    font-weight: 500;
+}
+#photos a {
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+#photos a:after{
+    content:" ➙";
+}
+
+#photos a:hover {
+    color:#298a10;
+    font-weight: 500;
+}
+
+a{
+    color: #116DB0;
+}
+
+.wrapper a{
+    transition: all 0.2s; 
+}
+
+
+#intro {
+    margin-bottom: 15rem; 
+    border-left: 1px solid black;
+    padding-left: 6rem;
+    border-color: #5b5b5b;
+    margin-right: 2rem;
+}
+#intro p{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#intro h3 {
+    font-size: 3rem;
+    color: #116DB0;
+}
+
+#intro a {    
+    float: right; 
+    margin-right: 4rem;   
+}
+
+
+
+#intro div {
+    margin-right: 4rem;    
+}
+#photos img{
+    -webkit-box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
+-moz-box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
+box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
+}
+#photos img:nth-child(2) {
+     align-self: flex-end;
+}
+#photos img:nth-child(4) {
+     align-self: flex-end;
+}
+#photos img:nth-child(1) {
+     align-self: flex-start;
+}
+#photos img:nth-child(3) {
+     align-self: flex-start;
+}
+#photos img:nth-child(5){
+    display: none;
+}
+#photos div{
+    display: flex;  
+    align-items: center;    
+    height: 36rem;
+    justify-content: space-between;
+}
+
+#photos img {
+    max-height: 20rem;
+    max-width: 20rem;    
+}
+
+#photos {
+    margin-bottom: 15rem;
+    margin-left: 2rem;
+}
+
+#photos a {    
+    float: right;    
+    margin-top: 5rem;    
+}
+
+
+
+#photos {
+    border-right: 1px solid black;
+    border-color: #5b5b5b;
+    padding-right: 6rem;
+}
+
+
+
+
+@media (max-width: 60.563em){
+    #photos img {
+    max-height: 15rem;
+    max-width: 15rem;
+    }
+    #photos div {
+    height: 25rem;
+    }
+}
+  
+
+@media (max-width: 46.875em) {
+    #photos img {
+    max-height: 10rem;
+    max-width: 10rem;
+    }
+    #photos div {
+    height: 15rem;
+    }
+    #banner {
+        padding-bottom: 30rem;
+    }
+    #intro {
+        margin-bottom: 15rem;
+    }
+    #intro p{
+    font-size: 1.6rem;
+    font-weight: 500;
+    }    
+    #intro h3 {
+    font-size: 2rem;
+    color: #fbde57;
+    }
+    #intro a{
+    font-size: 1.6rem;    
+    }
+    #photos a{
+    font-size: 1.6rem;
+    }
+}
+@media (max-width: 34.875em) {
+    #photos img {
+    display: none;  
+    }
+    #photos img:nth-child(5){
+    display: block;
+    margin: 0 auto;
+    max-height: 30rem;
+    max-width: 30rem;
+    padding-right: 3rem;
+    }
+    #photos div {
+    height: 30rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    }
+    #photos {
+    padding: 0rem;
+    }
+    #photos a{
+    margin-right: 4rem;
+    }
+
+    #intro {
+        margin-bottom: 10rem;
+    }
+    #photos {    
+    margin-left: 0rem;
+    }
+    #intro a {
+        margin-right: 1rem;
+    }
+    }

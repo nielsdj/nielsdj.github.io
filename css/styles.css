@@ -1,0 +1,209 @@
+/**
+ * General stylesheet
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@kahosl.be>
+ *
+ */
+
+/* =============================================
+ * GENERAL
+ =============================================== */
+	
+body {
+	color: #333333;
+	font-family: Palanquin;
+	font-size: 1.6rem;
+}
+
+body p {
+	color: #5b5b5b;
+}
+ul {
+	list-style: none;
+}
+.wrapper{	
+	max-width: 100rem;
+	min-height: 100%;
+	margin-bottom: 50px;
+	margin: 0 auto;
+}
+main .wrapper {	
+	padding: 0 2rem;		
+}
+a {
+	text-decoration: none;
+}
+/* =============================================
+ * LAYOUT
+ =============================================== */
+
+h2, h3 {
+	font-style: bold;
+} 
+h2 {
+	margin-bottom: 2rem;
+}
+
+/* =============================================
+ * HEADER
+ =============================================== */
+header {
+	background-color: #ffff;
+	padding: 2rem;
+
+}
+header a {
+	color:  #116DB0;
+	text-decoration: none;
+	font-weight: bold;
+	transition: all 0.2s; 
+}
+
+header a:hover {
+	color: #298a10;
+}
+header a:active {
+	color: #298a10;
+}
+h1 a {
+	display: block; 
+	width: 11rem; 
+	height: 10rem; 
+	white-space: nowrap; 
+	text-indent: 100%; 
+	overflow: hidden; 
+	background-image: url(../img/logo.jpg); 
+	background-size: 90% 100%; 
+	background-repeat: no-repeat;
+	color: white; 
+}	
+header .wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	
+
+}
+header li {
+	display: inline-block;
+	padding: 1rem;
+
+}
+header label{
+	display: none;
+}
+header input {
+	display: none;
+}
+
+header h1 a:hover{
+	animation: pulse 5s infinite;
+	animation-name: pulse;
+}
+
+/* =============================================
+ * DOORMAT
+ =============================================== */
+
+
+/* =============================================
+ * FOOTER
+ =============================================== */
+footer {
+	background-color: #f7f7f7;
+	text-align: center;
+	color: black;
+	padding: 1rem;
+	letter-spacing: 0.2rem;
+	height: 50px;
+}
+footer ul {
+	display: flex;
+	justify-content: center;
+
+}
+footer li {
+	padding-left: 2rem;
+	
+}
+footer i {
+	color: black;
+	transition: all 0.2s; 
+}
+footer i:hover {
+	color: #298a10;
+}
+
+
+
+
+
+/*Voor dit menu ging ik mijn inspiratie halen bij https://codeburst.io/how-to-make-a-collapsible-menu-using-only-css-a1cd805b1390 */
+@media (max-width: 59em){
+
+	header li {
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+	}
+	header label {
+		color: #333333;
+		text-decoration: none;
+		font-weight: bold;
+		transition: all 0.2s;
+		text-align: right;
+	}
+	header .wrapper a {
+		display:block;
+		padding: 10px;
+		text-decoration: none;
+	}
+	header label {
+		font-style: cursive;
+		display: block;
+		cursor: pointer;
+		background: url(../img/menu.png) no-repeat center center;
+		padding: 10px 20px 10px 120px;
+
+	}
+	#menu {
+		display: none;
+	}
+	input:checked +label {
+		background-image: url(../img/cancel.png);
+	}
+	.menu-content {
+		max-height: 0rem;
+		overflow: hidden;
+		padding: 0 0 0 30px;
+	}
+	input:checked ~ .menu-content {
+		max-height: 100%;
+	}	
+	header ul {
+		padding 
+	}
+
+	
+}
+@media (max-width: 31em){
+	h1 a {
+		display: block; 
+		width: 6rem; 
+		height: 6rem; 
+	}
+}
+
+
+@-webkit-keyframes pulse {
+  0% {
+	-webkit-transform: scale(1);
+  }
+  50% {
+	-webkit-transform: scale(1.1);
+  }
+  100% {
+	-webkit-transform: scale(1);
+  }
+}
+

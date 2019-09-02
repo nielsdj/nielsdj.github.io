@@ -1,0 +1,21 @@
+/**
+ * Stylesheet used for all sites
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@kahosl.be>
+ *
+ */
+
+
+html {
+	font-size: 0.625em;  /* set 1 rem = 16px * 0.625 = 10px */
+}
+
+* {
+	box-sizing: border-box; /* width and height include paddings and borders */
+	margin: 0; /* wipe out browser differences */
+	padding: 0; /* wipe out browser differences */ 
+}
+
+img {
+	border: 0;
+}

@@ -1,0 +1,80 @@
+/**
+ * About stylesheet
+ *
+ * @author      Niels Dejonghe (niels@zoni.be)
+ *
+ */
+
+
+/* =============================================
+ * HEADER
+ =============================================== */
+
+ header .wrapper{
+	border-bottom: 1px solid black;
+	border-color: #b0a8a8;
+	padding-bottom: 2rem;
+}
+/* =============================================
+ * MAIN
+ =============================================== */
+#kledijIntro{
+	text-align: center;
+	margin-right: 20rem;
+	margin-left: 20rem;
+	}
+#kledijIntro h2{
+	font-size: 5rem;
+	}
+#kledijIntro p{
+	font-size: 1.8rem;
+	}
+h3{
+	color: #116DB0;
+}
+
+footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center; 
+}
+footer {
+	height: 50px;
+}
+@media (max-width: 60.563em){
+	#kledijIntro {    
+		margin-right: 10rem;
+		margin-left: 10rem;
+	}
+
+
+}
+
+
+@media (max-width: 44.688em){
+	#kledijIntro {
+		margin-right: 5rem;
+		margin-left: 5rem;
+	}
+
+}
+
+
+@media (max-width: 31.250em){
+	#kledijIntro {
+	margin-right: 2rem;
+	margin-left: 2rem;
+	}
+	#kledijIntro h2 {
+	font-size: 3rem;
+	}
+	#kledijIntro p {
+	font-size: 1.6rem;
+	}
+	p {
+		font-size: 1.3rem
+	}
+}
+

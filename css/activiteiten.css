@@ -1,0 +1,154 @@
+/**
+ * Portfolio stylesheet
+ *
+ * @author      Niels Dejonghe (niels@zoni.be)
+ *
+ */
+
+
+/* =============================================
+ * HEADER
+ =============================================== */
+
+
+
+
+header .wrapper{
+	border-bottom: 1px solid black;
+	border-color: #b0a8a8;
+	padding-bottom: 2rem;	
+}
+/* =============================================
+ * MAIN
+ =============================================== */
+
+#projectintro{
+	text-align: center;
+	margin-right: 15rem;
+	margin-left: 15rem;
+}
+#projectintro h2{
+	font-size: 5rem;
+}
+#projectintro p{
+	font-size: 1.8rem;
+}
+#links {
+	margin-top: 10rem;
+ 	margin-bottom: 15rem; 
+    border-left: 1px solid black;
+    border-color: #5b5b5b;
+    padding-left: 6rem;    
+    margin-right: 2rem;    
+    display: flex;
+}
+
+section img{
+    max-width: 40rem;
+    max-height: 40rem;
+}
+
+#rechts {
+    margin-top: 10rem;
+    margin-bottom: 15rem; 
+    border-right: 1px solid black;
+    border-color: #5b5b5b;
+    padding-right: 6rem;    
+    margin-right: 2rem;    
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#links p{
+    padding-right: 1.5rem;
+}
+#rechts h3{
+    padding-left: 1.5rem;
+}
+#rechts p{
+    padding-left: 1.5rem;
+}
+textarea {
+    font-family: Palanquin;
+
+}
+
+
+@media (max-width: 60.563em){
+    #projectintro {
+    margin-right: 10rem;
+    margin-left: 10rem;
+    }
+
+}
+
+@media (max-width: 51.250em){
+    section img{
+    max-width: 20rem;
+    max-height: 20rem;
+    }
+    #links{
+    display: block;
+    }
+    #links img {
+        margin-left: 0rem;
+        margin-top: 3rem;
+    }
+    #rechts{
+    display: block;
+    margin-left: 1rem;
+    }
+    #rechts img {
+        margin-right: 0rem;
+        margin-top: 3rem;
+    }
+    #rechts{
+    display: block;
+    }
+    #rechts img {
+        margin-left: 0rem;
+        margin-top: 3rem;
+    }
+    #links p{
+    padding-right: 0rem;
+    }
+    #rechts h3{
+        padding-left: 0rem;
+    }
+    #rechts p{
+        padding-left: 0rem;
+    }
+    
+}
+
+@media (max-width: 44.688em){
+    #projectintro {    
+    margin-right: 5rem;
+    margin-left: 5rem;
+    }
+
+}
+
+
+@media (max-width: 31.250em){
+    #projectintro {    
+    margin-right: 2rem;
+    margin-left: 2rem;
+    }
+    p {
+        font-size:  1.3rem  
+    }
+    #links {
+            padding-left: 3.5rem;
+    }
+    #rechts {
+            padding-right: 3.5rem;
+    }
+    #projectintro h2 {
+    font-size: 3rem;
+    }
+    #projectintro p {
+    font-size: 1.6rem;
+    }
+
+}
