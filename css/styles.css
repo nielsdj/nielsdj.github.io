@@ -162,8 +162,9 @@ footer i:hover {
 		font-style: cursive;
 		display: block;
 		cursor: pointer;
-		background: url(../img/menu.png) no-repeat center center;
-		padding: 10px 20px 10px 120px;
+		background: url(../img/menu.png) no-repeat right center;
+		padding: 10px 20px 10px 10px;
+		margin-top: 1rem;
 
 	}
 	#menu {

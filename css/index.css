@@ -26,13 +26,40 @@ header .wrapper {
     background-position-x: center;
     background-position-y: 20%;
     margin-bottom: 7rem;
-    padding-bottom: 40rem;	
-    display: block;      
+    padding-bottom: 40rem;	  
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    padding-top: 4rem;
+    
     
 }
 .wrapper_banner{   
     max-width: none;
     margin: auto;
+}
+#banner input {
+    max-width: 25rem;               
+	cursor: pointer;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+	text-align: center;
+	font-size: 1.8rem;
+	color: white;
+    transition: all 0.4s; 
+    border-radius: 4px;
+    border-color: #116DB0;
+    text-shadow: none;
+    background-color: #116DB0;
+    outline: none;
+}
+
+#banner input:hover {
+    border-radius: 8px;
+    border-color: #298a10;
 }
 
 
@@ -94,7 +121,8 @@ a{
 
 #intro a {    
     float: right; 
-    margin-right: 4rem;   
+    margin-right: 4rem;
+    margin-top: 1.5rem;   
 }
 
 
@@ -141,7 +169,7 @@ box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
 
 #photos a {    
     float: right;    
-    margin-top: 5rem;    
+    margin-top: 1.5rem;    
 }
 
 
@@ -215,7 +243,7 @@ box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
     padding: 0rem;
     }
     #photos a{
-    margin-right: 4rem;
+    margin-right: 2rem;
     }
 
     #intro {
