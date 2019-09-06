@@ -115,7 +115,7 @@ footer {
 	color: black;
 	padding: 1rem;
 	letter-spacing: 0.2rem;
-	height: 50px;
+	margin-top: 3rem;
 }
 footer ul {
 	display: flex;

@@ -40,12 +40,12 @@ header .wrapper {
     margin: auto;
 }
 #banner input {
-    max-width: 25rem;               
+    max-width: 35rem;               
 	cursor: pointer;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 	text-align: center;
 	font-size: 1.8rem;
 	color: white;
@@ -53,13 +53,13 @@ header .wrapper {
     border-radius: 4px;
     border-color: #116DB0;
     text-shadow: none;
-    background-color: #116DB0;
+    background-color: #2f59cc;
     outline: none;
 }
 
 #banner input:hover {
     border-radius: 8px;
-    border-color: #298a10;
+    border-color: white;
 }
 
 
