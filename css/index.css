@@ -77,7 +77,6 @@ header .wrapper {
 }
 
 #intro a:hover {
-    color:#298a10;
     font-weight: 500;
 }
 #photos a {
@@ -89,7 +88,6 @@ header .wrapper {
 }
 
 #photos a:hover {
-    color:#298a10;
     font-weight: 500;
 }
 
@@ -179,6 +177,23 @@ box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
     border-color: #5b5b5b;
     padding-right: 6rem;
 }
+#fb-page {
+    border-left: 1px solid black;
+    border-color: #5b5b5b;
+    padding-left: 6rem;
+    display: flex;
+    flex-direction: column;
+}
+#centreren-fb-page {
+    text-align: center;    
+}
+#fb-page h3 {
+    font-size: 3rem;
+    color: #116DB0;
+    margin-bottom: 2rem;
+    float: left;
+}
+
 
 
 
@@ -214,13 +229,21 @@ box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
     }    
     #intro h3 {
     font-size: 2rem;
-    color: #fbde57;
     }
     #intro a{
     font-size: 1.6rem;    
     }
     #photos a{
     font-size: 1.6rem;
+    }
+    #banner input {
+        max-width: 35rem;               
+        cursor: pointer;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        
     }
 }
 @media (max-width: 34.875em) {
@@ -254,5 +277,15 @@ box-shadow: 4px 6px 5px 3px rgba(0,0,0,0.1);
     }
     #intro a {
         margin-right: 1rem;
+    }
+    #banner {
+        padding-bottom: 20rem;
+    }
+    #fb-page h3 {
+        font-size: 2rem;
+        
+    }
+    #fb-page {
+        padding-left: 2rem;
     }
     }

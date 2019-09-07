@@ -32,6 +32,10 @@ main .wrapper {
 }
 a {
 	text-decoration: none;
+	color: #116DB0;
+}
+a:hover {
+	color:#fed42f;
 }
 /* =============================================
  * LAYOUT
@@ -60,10 +64,10 @@ header a {
 }
 
 header a:hover {
-	color: #298a10;
+	color: #fed42f;
 }
 header a:active {
-	color: #298a10;
+	color: #fed42f;
 }
 h1 a {
 	display: block; 
@@ -131,7 +135,7 @@ footer i {
 	transition: all 0.2s; 
 }
 footer i:hover {
-	color: #298a10;
+	color: #fed42f;
 }
 
 
