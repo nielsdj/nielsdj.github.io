@@ -81,6 +81,18 @@ textarea {
 #pagadders {
     display: none;
 }
+#jongknapen {
+    display: none;
+}
+#knapen {
+    display: none;
+}
+#jonghernieuwers{
+    display: none;
+}
+#hernieuwers {
+    display: none;
+}
 footer{
 	position: fixed;
 	left: 0;
